@@ -61,7 +61,7 @@ module flowxswap::factory {
 
     /// Whether the liquidity pool of the two coins has been created?
     public fun pair_is_created<X, Y>(container: &Container): bool {
-       
+       abort 0
     }
 
     /// Immutable borrows the `PairMetadata` of two coins X and Y.
