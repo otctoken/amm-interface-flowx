@@ -13,7 +13,7 @@ module flowxswap::factory {
     use flowxswap::pair::{Self, PairMetadata};
     use flowxswap::treasury::{Self, Treasury};
 
-    const ZERO_ADDRESS: address = @zero;
+    const ZERO_ADDRESS: address = @0x0;
 
     const ERROR_PAIR_ALREADY_CREATED: u64 = 0;
     const ERROR_PAIR_UNSORTED: u64 = 1;
