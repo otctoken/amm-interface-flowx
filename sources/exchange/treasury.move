@@ -1,6 +1,6 @@
 module flowxswap::treasury {
 
-    friend flowxswap::factory;
+    
 
     public struct Treasury has store {
         /// the address of the treasurer of the treasury
