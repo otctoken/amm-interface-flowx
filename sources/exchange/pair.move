@@ -18,7 +18,7 @@ module flowxswap::pair {
     /// constants 
     /// 
     const MINIMUM_LIQUIDITY: u64 = 1000;
-    const ZERO_ADDRESS: address = @zero;
+    const ZERO_ADDRESS: address = @0x0;
     const FEE_PRECISION: u64 = 10000;
 
     /// 
