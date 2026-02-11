@@ -19,7 +19,7 @@ module flowxswap::factory {
     const ERROR_PAIR_UNSORTED: u64 = 1;
     
     /// The container that holds all of AMM's liquidity pools
-    struct Container has key {
+    public struct Container has key {
         /// the ID of this container
         id: UID,
         /// AMM's liquidity pool collection.
@@ -29,12 +29,12 @@ module flowxswap::factory {
     }
 
     /// Capability allow appoints new treasurer
-    struct AdminCap has key, store {
+    public struct AdminCap has key, store {
         id: UID,
     }
 
     /// Emitted when liquidity pool is created from user.
-    struct PairCreated has copy, drop {
+    public struct PairCreated has copy, drop {
         user: address,
         pair: String,
         coin_x: String,
@@ -42,7 +42,7 @@ module flowxswap::factory {
     }
 
     /// Emitted when fee rate is changed from user
-    struct FeeChanged has copy, drop {
+    public struct FeeChanged has copy, drop {
         user: address,
         coin_x: String,
         coin_y: String,
