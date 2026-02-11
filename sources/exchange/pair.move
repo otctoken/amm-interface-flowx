@@ -12,7 +12,7 @@ module flowxswap::pair {
     use flowxswap::type_helper;
     use flowxswap::treasury::{Self, Treasury};
 
-    friend flowxswap::factory;
+
 
     /// 
     /// constants 
