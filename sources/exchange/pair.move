@@ -33,10 +33,10 @@ module flowxswap::pair {
     const ERROR_INVALID_FEE: u64 = 6;
 
     /// LP Coins represent the liquidity of two coins X and Y
-    struct LP<phantom X, phantom Y> has drop {}
+    public struct LP<phantom X, phantom Y> has drop {}
 
     /// Metadata of each liquidity pool.
-    struct PairMetadata<phantom X, phantom Y> has key, store {
+    public struct PairMetadata<phantom X, phantom Y> has key, store {
         /// the ID of liquidity pool of two coins X and Y
         id: UID,
         /// the reserve of coin X in pool
@@ -52,7 +52,7 @@ module flowxswap::pair {
     }
 
     /// Emitted when liquidity is added from user
-    struct LiquidityAdded has copy, drop {
+    public struct LiquidityAdded has copy, drop {
         user: address,
         coin_x: String,
         coin_y: String,
@@ -63,7 +63,7 @@ module flowxswap::pair {
     }
 
     /// Emitted when liquidity is removed from user
-    struct LiquidityRemoved has copy, drop {
+    public struct LiquidityRemoved has copy, drop {
         user: address,
         coin_x: String,
         coin_y: String,
@@ -74,7 +74,7 @@ module flowxswap::pair {
     }
 
     /// Emitted when coin X is swapped to coin Y from user
-    struct Swapped has copy, drop {
+    public struct Swapped has copy, drop {
         user: address,
         coin_x: String,
         coin_y: String,
@@ -114,12 +114,12 @@ module flowxswap::pair {
     }
 
     /// Creates a liquidity pool of two coins X and Y.
-    public(friend) fun create_pair<X, Y>(ctx: &mut TxContext): PairMetadata<X, Y> {        
+    public(package) fun create_pair<X, Y>(ctx: &mut TxContext): PairMetadata<X, Y> {        
         abort 0
     }
 
     /// Change fee rate of pair
-    public(friend) fun set_fee_rate<X, Y>(metadata: &mut PairMetadata<X, Y>, new_fee_rate: u64) {
+    public(package) fun set_fee_rate<X, Y>(metadata: &mut PairMetadata<X, Y>, new_fee_rate: u64) {
        abort 0
     }
     
