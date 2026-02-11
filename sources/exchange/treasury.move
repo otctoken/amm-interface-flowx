@@ -2,7 +2,7 @@ module flowxswap::treasury {
 
     friend flowxswap::factory;
 
-    struct Treasury has store {
+    public struct Treasury has store {
         /// the address of the treasurer of the treasury
         treasurer: address,
     }
@@ -10,7 +10,7 @@ module flowxswap::treasury {
     /// We only allow this function to be called by the module factory.
     /// This is to ensure that only a single resource represents the AMM's treasury
     /// It should also only be called once in the init function
-    public(friend) fun new(treasurer: address): Treasury {
+    public(package) fun new(treasurer: address): Treasury {
         abort 0
     }
 
