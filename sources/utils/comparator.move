@@ -8,7 +8,7 @@ module flowxswap::comparator {
     const SMALLER: u8 = 1;
     const GREATER: u8 = 2;
 
-    struct Result has drop {
+    public struct Result has drop {
         inner: u8,
     }
 
